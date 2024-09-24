@@ -114,6 +114,9 @@ local ui = {
                     set = function(self,index)
                         obj:set_int(index)
                     end,
+                    update = function(self,items)
+                        gui.set_combo_items(container..">"..name, items)
+                    end,
                     type = function(self)
                         return "combobox"
                     end,
@@ -249,6 +252,9 @@ local ui = {
                     end,
                     set = function(self,index)
                         obj:set_int(index-1)
+                    end,
+                    update = function(self,items)
+                        gui.set_listbox_items(container..">"..name, items)
                     end,
                     type = function(self)
                         return "listbox"
